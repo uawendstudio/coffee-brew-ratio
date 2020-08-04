@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+<script defer src="brewratio.js"></script>
+<style type="text/css">
+main {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Simple coffee ratio</h1>
+  <p>Calculate brewing ratio for Filter coffee (Hario V60)</p>
+  <label for="input-grams">Amount of coffee</label><br>
+  <input id="input-grams" name="input-grams" value="20" placeholder="Coffee (g)" oninput="calc('coffee')"><br><br>
+  
+  <label for="input-water">Amount of water</label><br>
+  <input id="input-water" name="input-water" value="320" placeholder="Water (g)" oninput="calc('water')"><br><br>
+  
+  <label for="ratio">Desired brew ratio (bigger number - weaker cup)</label><br>
+  <input type="range" id="ratio" min="10" max="20" name="ratio" value="16" oninput="calc('')">
+<p id="ratioText">Current ratio is: 1:16</p>
+  </br>
+
+</main>
+<footer></footer>
+</body>
+</html>
