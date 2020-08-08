@@ -7,7 +7,7 @@ const ratio = document.getElementById("ratio");
 
 let tempValue = "coffee";
 
-function calc(value) {
+function input(value) {
   if (value == '') return updateRatioText()
   tempValue = value;
   return whatToCalc()
