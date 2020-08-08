@@ -5,26 +5,17 @@ const result = document.getElementById("result");
 const ratio = document.getElementById("ratio");
 
 
-let tempValue = "";
+let tempValue = "coffee";
 
 function calc(value) {
-  
-  if(value != '') {
-    tempValue = value;
-  } else {
-    updateRatioText();
-    if (tempValue === "coffee") {
-    calcWaterAmount();
-    } else {
-    calcCoffeeAmount();
-    }
-  }
- 
- if (tempValue === "coffee") {
-  calcWaterAmount();
- } else if (tempValue === "water") {
-  calcCoffeeAmount();
- }
+  if (value == '') return updateRatioText()
+  tempValue = value;
+  return whatToCalc()
+}
+
+function whatToCalc() {
+  if (tempValue === "coffee") return calcWaterAmount()
+  if (tempValue === "water") return calcCoffeeAmount()
 }
 
 function calcWaterAmount() {
@@ -38,5 +29,6 @@ function calcCoffeeAmount() {
 }
 
 function updateRatioText() {
-   ratioText.innerHTML = `Current ratio is: 1:${ratio.value}`;
+  whatToCalc();
+  ratioText.innerHTML = `Current ratio is: 1:${ratio.value}`;
 }
